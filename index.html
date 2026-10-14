@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="theme-color" content="#b6a8e8">
+  <meta name="color-scheme" content="dark light">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Mac Desktop">
+
+  <title>Mac Desktop</title>
+
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <main id="desktop" class="desktop">
+    <div class="wallpaper wallpaper-default"></div>
+    <div class="wallpaper-shade"></div>
+
+    <header class="menubar glass">
+      <button class="brand" id="appleMenu" aria-label="Menu Anip">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M16.7 12.8c0-2.2 1.8-3.3 1.9-3.4a4.2 4.2 0 0 0-3.3-1.8c-1.4-.2-2.7.8-3.4.8s-1.8-.8-3-.8a4.5 4.5 0 0 0-3.8 2.3c-1.6 2.8-.4 6.9 1.1 9.2.7 1.1 1.5 2.3 2.6 2.2 1 0 1.4-.7 2.7-.7s1.7.7 2.8.7 1.8-1.1 2.5-2.3a10 10 0 0 0 1.1-2.3 4 4 0 0 1-2.2-3.9ZM14.4 6.1a4 4 0 0 0 .9-2.9 4.2 4.2 0 0 0-2.7 1.4 3.8 3.8 0 0 0-1 2.8 3.5 3.5 0 0 0 2.8-1.3Z"/>
+        </svg>
+      </button>
+      <button class="menu-label active" id="menuApp">Mac</button>
+      <button class="menu-label" data-open="finder">File</button>
+      <button class="menu-label" data-open="notes">Edit</button>
+      <button class="menu-label" data-open="launchpad">View</button>
+      <button class="menu-label" data-open="settings">Window</button>
+      <button class="menu-label" data-open="settings">Help</button>
+      <div class="menu-spacer"></div>
+      <button class="menubar-icon" id="focusButton" title="Mode fokus">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="7"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3"/></svg>
+      </button>
+      <button class="menubar-icon" id="controlButton" title="Control Center">
+        <svg viewBox="0 0 24 24"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="2.5"/><circle cx="15" cy="17" r="2.5"/></svg>
+      </button>
+      <button class="menubar-icon" id="notificationButton" title="Notifikasi">
+        <svg viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></svg>
+      </button>
+      <button class="menu-clock" id="menuClock" title="Tanggal dan waktu">Sen, 09:41</button>
+    </header>
+
+    <section id="desktopIcons" class="desktop-icons" aria-label="Aplikasi desktop">
+      <button class="desktop-icon" data-open="finder">
+        <span class="app-icon finder-icon"><svg viewBox="0 0 48 48"><path fill="#83BDF7" d="M6 10h36v28H6z"/><path fill="#BDE1FF" d="M6 10h18v28H6z"/><path d="M24 10v28" stroke="#fff" stroke-width="1.5"/><path d="M6 19h36" stroke="#fff" stroke-width="1.5"/></svg></span>
+        <span>Finder</span>
+      </button>
+      <button class="desktop-icon" data-open="notes">
+        <span class="app-icon notes-icon"><svg viewBox="0 0 48 48"><rect x="7" y="5" width="34" height="38" rx="5" fill="#fff"/><path d="M8 14h32" stroke="#E8B94B" stroke-width="8"/><path d="M14 23h20M14 29h20M14 35h14" stroke="#C5CAD4" stroke-width="1.7"/></svg></span>
+        <span>Notes</span>
+      </button>
+      <button class="desktop-icon" data-open="calculator">
+        <span class="app-icon calc-icon"><svg viewBox="0 0 48 48"><rect x="6" y="4" width="36" height="40" rx="8" fill="#454955"/><rect x="11" y="9" width="26" height="9" rx="2" fill="#A6E5D1"/><g fill="#E4E6EC"><circle cx="15" cy="25" r="2.5"/><circle cx="24" cy="25" r="2.5"/><circle cx="33" cy="25" r="2.5"/><circle cx="15" cy="34" r="2.5"/><circle cx="24" cy="34" r="2.5"/><circle cx="33" cy="34" r="2.5"/></g></svg></span>
+        <span>Calculator</span>
+      </button>
+      <button class="desktop-icon" data-open="calendar">
+        <span class="app-icon calendar-icon"><svg viewBox="0 0 48 48"><rect x="5" y="7" width="38" height="36" rx="7" fill="#fff"/><path d="M5 14q0-7 7-7h24q7 0 7 7v4H5z" fill="#EF6C67"/><text x="24" y="34" font-size="21" text-anchor="middle" fill="#303441" font-weight="700" id="calendarDayIcon">14</text></svg></span>
+        <span>Calendar</span>
+      </button>
+      <button class="desktop-icon" data-open="settings">
+        <span class="app-icon settings-icon"><svg viewBox="0 0 48 48"><defs><linearGradient id="gear" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#D7DCE4"/><stop offset="1" stop-color="#858D9C"/></linearGradient></defs><path fill="url(#gear)" d="M21 3h6l1.5 5.2 4.1 1.7 4.7-2.4 4.2 4.2-2.4 4.7 1.7 4.1L46 22v6l-5.2 1.5-1.7 4.1 2.4 4.7-4.2 4.2-4.7-2.4-4.1 1.7L27 47h-6l-1.5-5.2-4.1-1.7-4.7 2.4-4.2-4.2 2.4-4.7-1.7-4.1L2 28v-6l5.2-1.5 1.7-4.1-2.4-4.7 4.2-4.2 4.7 2.4 4.1-1.7z"/><circle cx="24" cy="25" r="9" fill="#5E6675"/><circle cx="24" cy="25" r="5" fill="#DDE2EA"/></svg></span>
+        <span>Settings</span>
+      </button>
+      <button class="desktop-icon" data-open="trash">
+        <span class="app-icon trash-icon"><svg viewBox="0 0 48 48"><path d="M13 13h22l-2 29H15z" fill="#D9E0EA"/><path d="M10 10h28M19 10V6h10v4" fill="none" stroke="#9EA9B8" stroke-width="3" stroke-linecap="round"/><path d="M21 18v17M27 18v17" stroke="#AAB5C4" stroke-width="2"/></svg></span>
+        <span>Trash</span>
+      </button>
+    </section>
+
+    <section id="windowLayer" class="window-layer" aria-live="polite"></section>
+
+    <div id="launchpad" class="launchpad hidden">
+      <div class="launchpad-top">
+        <div>
+          <div class="eyebrow">MAC DESKTOP</div>
+          <h1>Applications</h1>
+        </div>
+        <button class="round-button" data-dismiss="launchpad" aria-label="Tutup">×</button>
+      </div>
+      <label class="search-box">
+        <svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 5 5"/></svg>
+        <input id="appSearch" type="search" placeholder="Cari aplikasi..." autocomplete="off">
+        <kbd>⌘ K</kbd>
+      </label>
+      <div id="appGrid" class="app-grid"></div>
+    </div>
+
+    <aside id="controlPanel" class="floating-panel control-panel glass hidden">
+      <div class="panel-heading"><div><div class="eyebrow">SYSTEM</div><h2>Control Center</h2></div><button class="round-button" data-dismiss="controlPanel">×</button></div>
+      <div class="control-grid">
+        <button class="control-tile selected" id="wifiToggle"><span>⌁</span><div><b>Wi-Fi</b><small>Terhubung</small></div></button>
+        <button class="control-tile selected" id="bluetoothToggle"><span>ᛒ</span><div><b>Bluetooth</b><small>Aktif</small></div></button>
+        <button class="control-tile" id="focusToggle"><span>☾</span><div><b>Focus</b><small>Mode fokus</small></div></button>
+        <button class="control-tile" id="darkToggle"><span>◐</span><div><b>Appearance</b><small>Terang / gelap</small></div></button>
+      </div>
+      <div class="control-section"><div class="control-label">Brightness</div><input id="brightnessRange" type="range" min="65" max="115" value="100"></div>
+      <div class="control-section"><div class="control-label">Volume</div><input id="volumeRange" type="range" min="0" max="100" value="65"></div>
+      <button class="panel-wide-button" id="openSettings">Open System Settings <span>›</span></button>
+    </aside>
+
+    <aside id="notificationPanel" class="floating-panel notification-panel glass hidden">
+      <div class="panel-heading"><div><div class="eyebrow">CENTRE</div><h2>Notifications</h2></div><button class="round-button" data-dismiss="notificationPanel">×</button></div>
+      <div id="notificationList" class="notification-list">
+        <article class="notification-card"><span class="notification-symbol">✦</span><div><b>Anip Desktop</b><p>Selamat datang di ruang kerja kamu.</p><small>Baru saja</small></div></article>
+      </div>
+      <button class="panel-wide-button" id="clearNotifications">Clear all notifications</button>
+    </aside>
+
+    <div id="contextMenu" class="context-menu glass hidden">
+      <button data-context="launchpad">Applications</button>
+      <button data-context="notes">New Note</button>
+      <button data-context="settings">Desktop Settings</button>
+      <div class="context-divider"></div>
+      <button data-context="fullscreen">Enter Full Screen</button>
+    </div>
+
+    <div id="toast" class="toast glass" role="status"></div>
+
+    <nav class="dock-wrap" aria-label="Dock">
+      <div id="dock" class="dock glass">
+        <button class="dock-app" data-open="finder" title="Finder"><span class="dock-icon finder-icon"><svg viewBox="0 0 48 48"><path fill="#83BDF7" d="M6 10h36v28H6z"/><path fill="#BDE1FF" d="M6 10h18v28H6z"/><path d="M24 10v28" stroke="#fff" stroke-width="1.5"/></svg></span><i>Finder</i></button>
+        <button class="dock-app" data-open="launchpad" title="Launchpad"><span class="dock-icon launch-icon">✣</span><i>Launchpad</i></button>
+        <button class="dock-app" data-open="notes" title="Notes"><span class="dock-icon notes-dock">▤</span><i>Notes</i></button>
+        <button class="dock-app" data-open="calculator" title="Calculator"><span class="dock-icon calculator-dock">＋<small>÷</small></span><i>Calculator</i></button>
+        <button class="dock-app" data-open="calendar" title="Calendar"><span class="dock-icon calendar-dock"><small id="dockMonth">OCT</small><b id="dockDay">14</b></span><i>Calendar</i></button>
+        <button class="dock-app" data-open="settings" title="System Settings"><span class="dock-icon settings-dock">⚙</span><i>Settings</i></button>
+        <span class="dock-divider"></span>
+        <button class="dock-app" data-open="trash" title="Trash"><span class="dock-icon trash-dock">♲</span><i>Trash</i></button>
+      </div>
+    </nav>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

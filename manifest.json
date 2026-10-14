@@ -1,0 +1,23 @@
+
+{
+  "id": "./",
+  "name": "Mac Desktop",
+  "short_name": "Mac",
+  "description": "A personal desktop experience inspired by macOS.",
+  "lang": "id-ID",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "landscape",
+  "background_color": "#171923",
+  "theme_color": "#b6a8e8",
+  "categories": ["utilities", "productivity"],
+  "icons": [
+    {
+      "src": "./icons/mac.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
